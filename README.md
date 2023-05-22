@@ -10,10 +10,15 @@ Inside the zip files, you will find the original files named "zs_shortcode." The
 
 
 To insert shortcodes into the WordPress Frontend Editor using WPBakery, follow these steps:
+
 1.Start by creating a new page within your WordPress admin dashboard.
+
 2.Add a Text Block element to the page by selecting it from the WPBakery page builder's elements menu.
+
 3.In the Text Block, paste the shortcode you want to insert. Make sure to replace "[your_shortcode]" with the actual name of your shortcode, enclosed in square brackets.
+
 4.Fill in the necessary details or parameters for your shortcode within the Text Block element. These fields depend on the specific shortcode and its configuration.
+
 5.Once you have finished configuring the shortcode and its associated details, update or publish the page to make the changes live on your website.
 By following these steps, you can easily insert and customize shortcodes within the WordPress Frontend Editor using WPBakery's Text Block element.
 
