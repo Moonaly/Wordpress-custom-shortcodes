@@ -1,0 +1,33 @@
+<script> 
+
+    jQuery("#btnsubmitcheck").click(function(e){
+    var cname = jQuery('#companyName').val();
+    e.preventDefault(); // if the clicked element is a link
+    jQuery.post(jQuery("#ajax_url").val(), {
+      action: 'checkcompanyname',
+      companyName : cname,
+      // and the rest
+    }, function(response) {
+      // handle a successful response
+      console.log(response)
+      jQuery( "#outbox" ).html( response );
+    });
+});
+</script>
+
+/*********************************/
+<form method="POST">
+<input maxlength="50" id="companyName" name="companyName" type="text" placeholder="Enter your company name (Max. 50 characters)" value="<?php if(isset($_POST['companyName'] )) { echo htmlentities($_POST['companyName']); } ?>" required />
+<input type="hidden" id="ajax_url" value="<?php echo admin_url('admin-ajax.php'); ?>"/>
+<input id="btnsubmitcheck" name="submit" type="submit" value="Check Availability" />
+</form>
+<div id="outbox"></div>
+
+/***********************/
+add_action( 'wp_ajax_checkcompanyname', 'wpse_checkcompany' );
+add_action( 'wp_ajax_nopriv_checkcompanyname', 'wpse_checkcompany' );
+
+function wpse_checkcompany() {
+====api====
+die();
+}
