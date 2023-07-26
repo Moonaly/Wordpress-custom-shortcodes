@@ -1,0 +1,108 @@
+div#client .title{
+	margin-left: 7em;
+}
+.client_carousel.owl-carousel .owl-stage {
+	display:flex;
+}
+.client_carousel .item {
+	background: #587EFF;
+	border-radius: 2em;
+	padding: 35px;
+	height: 100%;
+	/* 	width: 90%; */
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;                 
+	-o-transition: all 0.3s ease;   
+	-ms-transition: all 0.3s ease;          
+	transition: all 0.3s ease;
+}
+.client_carousel .light-bg .item{
+	background:#D5DFFF;
+	-webkit-transition: all 0.3s ease;                  
+	-moz-transition: all 0.3s ease;                 
+	-o-transition: all 0.3s ease;   
+	-ms-transition: all 0.3s ease;          
+	transition: all 0.3s ease;	
+}
+.client_carousel .light-bg .client_comment, .client_carousel .light-bg  .client_name{
+	color:#000;
+}
+.client_carousel .light-bg  .client_name{
+	border: 1px solid #000;
+}
+.client_name {
+	display: inline-block;
+	margin-bottom: 0;
+	color: #fff;
+	font-weight: 100;
+	font-size: 15px;
+	padding: 10px 35px;
+	border: 1px solid #fff;
+	border-radius: 3em;
+}
+.client_comment {
+	font-size: 35px;
+	font-weight:bold;
+	line-height: 1.2;
+	color: #fff;
+	margin: 2em 0;
+}
+.circle_pic.one,.circle_pic.two,.circle_pic.three,.circle_pic.four,.circle_pic.five,.circle_pic.six,.circle_pic.seven{
+	margin-bottom: 2em;
+	width:154px;
+	height:154px;
+	border-radius: 10em;
+}
+.circle_pic.one{
+	background: url(img/c01.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.two{
+	background: url(img/c02.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.three{
+	background: url(img/c03.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.four{
+	background: url(img/c04.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.five{
+	background: url(img/c05.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.six{
+	background: url(img/c06.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.circle_pic.seven{
+	background: url(img/c07.jpg);
+	background-size: contain;
+	background-position: center;
+}
+.client_carousel .owl-nav {
+	position: absolute;
+	left: -620px;
+	bottom: 70px;
+}
+.client_carousel.owl-carousel .owl-nav span{
+	opacity:0;
+}
+.client_carousel.owl-carousel .owl-nav .owl-prev{
+	height: 80px;
+	width: 80px;
+	background:url('img/arrow-left.png');
+}
+.client_carousel.owl-carousel .owl-nav .owl-next{
+	height: 80px;
+	width: 80px;
+	background:url('img/arrow-right.png');
+}
