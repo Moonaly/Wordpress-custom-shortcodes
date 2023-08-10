@@ -1,0 +1,22 @@
+/*form*/
+.form_section{background-image:url('img/form_bg.png');background-size:cover;background-repeat: no-repeat;background-position: top;}
+.form {background: #FDFDFD;box-shadow: 0px 0px 20px 3px rgb(0,0,0, 0.16);max-width: 650px;padding: 45px;margin: 50px auto;border-radius: 30px;}
+#pu_reg_form h2 {font-size: 30px;text-align: center;}
+#pu_reg_form h4 {font-size: 18px;text-align: center;margin-bottom: 30px;}
+.form-group{position:relative;}
+.form-control {background-color: #FFFFFF;border-radius: 5px;border: 1px solid #F0F0F0;color:#725BFF;height: calc(2em + 0.75rem + 2px);}
+.wish_amount::placeholder{color:#725BFF !important;}
+.registered_btn.otp_btn, .btnpopup_submit.otp_btn{background-color: #fff;color: #B1B1B1;box-shadow: none;border: 1px solid #ced4da;border-radius:5px;width: auto;padding: 3px 10px;position: absolute;top: 7px;right: 3px;font-weight: 500;}
+.registered_btn, .btnpopup_submit{background-color: #02E5CC;color: #707070;width: 100%;border: 1px solid #02E5CC;padding: 15px;border-radius: 10px;font-weight: 700;box-shadow: 3px 3px 20px #25130028;}
+.form-control.reg_num.otp_field{background-color: #fff;}
+.reg_num::placeholder, .ic::placeholder, .full_name::placeholder {color:#ADADAD;}
+.fillin {margin-bottom:0px;}
+#form #pu_reg_form{display:block !important;}
+#puRegForm label span{
+    color: #ADADAD;
+    font-size: 14px;	
+}
+
+.registered_btn.otp_btn{background-color: #02E5CC;color:#fff;}
+button.otp_btn:disabled{pointer-events: none;background:#c8c8c8;border: 1px solid #c8c8c8;}
+.btn_submit:disabled{pointer-events: none;background:#c8c8c8;border: 1px solid #c8c8c8;}
