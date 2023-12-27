@@ -1,0 +1,100 @@
+<?php
+
+function banner_slider($atts) {
+// Attributes
+$atts = shortcode_atts(
+array(
+'postid' => get_the_ID(),
+), 
+$atts
+);
+// Attributes in var
+$post_id = $atts['postid']; 
+ob_start();
+?>
+
+<style>
+/*#bannerslider {*/
+/*    display:flex;*/
+/*}*/
+#bannerslider .bg_pic{
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#bannerslider .title{
+    font-family: "Share",Sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: .99em;
+    letter-spacing: -.8px;
+}
+.banner_slides .container {
+    max-width:2100px;
+    width:100%;
+}
+.row.bg_pic {
+    width: 100%;
+}
+</style>
+
+<!-- TESTIMONIALS -->
+<?php if( have_rows('banner_slides') ): ?>
+
+    <div class="banner_slides">
+          <div class="row">
+              <div id="bannerslider" class="owl-carousel">
+                <?php while( have_rows('banner_slides') ): the_row(); 
+                $img = get_sub_field('img');
+                $uptitle = get_sub_field('up_title');
+                $lowtitle = get_sub_field('low_title');
+                ?>
+                        <!-- TESTIMONIAL 1 -->
+                        <div class="item">
+                            <div class="row bg_pic" style="background:url('<?php echo $img; ?>');">
+                                <div class="title col-sm-6" style="color:white;"><span><?php echo $uptitle; ?></span><?php echo $lowtitle; ?></div>
+                            </div>
+                        </div>
+                        <!-- END OF TESTIMONIAL 1 -->
+              	<?php endwhile; ?>	
+              </div>
+          </div>
+    </div>
+    
+        <!-- END OF TESTIMONIALS -->
+    
+    <script>
+    jQuery(document).ready(function(jQuery) {
+            		"use strict";
+            		//  TESTIMONIALS CAROUSEL HOOK
+    		        jQuery('#bannerslider').owlCarousel({
+    		            loop: true,
+    		            center: true,
+    		            items: 1,
+    		            margin: 0,
+    		           // autoplay: false,
+    		            //dots:false,
+    		            //autoplayTimeout: 8500,
+    		            //smartSpeed: 450,
+    		            responsive: {
+    		              0: {
+    		                items: 1
+    		              },
+    		              768: {
+    		                items: 1
+    		              },
+    		              1170: {
+    		                items: 1
+    		              }
+    		            }
+    		        });
+            	});   
+    </script>
+
+<?php endif; ?>
+
+<?php
+return ob_get_clean();
+}
+add_shortcode('banner_slider','banner_slider');
+
