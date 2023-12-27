@@ -1,0 +1,104 @@
+<?php
+
+function banner_slider($atts) {
+// Attributes
+$atts = shortcode_atts(
+array(
+'postid' => get_the_ID(),
+), 
+$atts
+);
+// Attributes in var
+$post_id = $atts['postid']; 
+ob_start();
+?>
+
+<style>
+#bannerslider .bg_pic{
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+#bannerslider .title{
+    font-family: "Share",Sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: .99em;
+    letter-spacing: -.8px;
+}
+.banner_slides .container {
+    max-width:2100px;
+    width:100%;
+}
+</style>
+
+<!-- TESTIMONIALS -->
+
+<div class="banner_slides">
+      <div class="row">
+          <div id="bannerslider" class="owl-carousel">
+                <?php
+                // Get ACF field values
+                $banner_one = get_field('banner_one');
+                $title_one = get_field('title_one');
+                $banner_two = get_field('banner_two');
+                $title_two = get_field('title_two');
+                ?>
+                <!-- TESTIMONIAL 1 -->
+                <div class="item">
+                    <div class="row bg_pic" style="background:url('<?php echo esc_url($banner_one); ?>');">
+                        <div class="title col-sm-6" style="color:white;"><?php echo esc_html($title_one); ?></div>
+                    </div>
+                </div>
+                <!-- END OF TESTIMONIAL 1 -->
+                <!-- TESTIMONIAL 2 -->
+                <div class="item">
+                    <!--<div class="row bg_pic" style="background:url('<?//php echo get_template_directory_uri(); ?>/img/slide-2.jpg');">-->
+                        <div class="row bg_pic" style="background:url('<?php echo esc_url($banner_two); ?>');">
+                        <div class="title col-sm-6" style="color:white;"><?php echo esc_html($title_two); ?></div>
+                    </div>
+                </div>
+                <!-- END OF TESTIMONIAL 2 -->
+          </div>
+      </div>
+</div>
+
+    <!-- END OF TESTIMONIALS -->
+
+
+
+
+
+<script>
+jQuery(document).ready(function(jQuery) {
+        		"use strict";
+        		//  TESTIMONIALS CAROUSEL HOOK
+		        jQuery('#bannerslider').owlCarousel({
+		            loop: true,
+		            center: true,
+		            items: 1,
+		            margin: 0,
+		           // autoplay: false,
+		            //dots:false,
+		            //autoplayTimeout: 8500,
+		            //smartSpeed: 450,
+		            responsive: {
+		              0: {
+		                items: 1
+		              },
+		              768: {
+		                items: 1
+		              },
+		              1170: {
+		                items: 1
+		              }
+		            }
+		        });
+        	});   
+</script>
+
+<?php
+return ob_get_clean();
+}
+add_shortcode('banner_slider','banner_slider');
+
